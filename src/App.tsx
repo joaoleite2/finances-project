@@ -3,7 +3,9 @@ import Page from "./pages";
 
 const App:React.FC = () => {
   return(
-    <Page />
+    <>
+      <Page />
+    </>
   )
 }
 

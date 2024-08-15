@@ -1,18 +1,14 @@
+import SideBar from "../components/SideBar";
+import { MainContainer } from "./style";
+
 const Page = () => {
   return(
+    <MainContainer>
+    <SideBar />
     <section>
-      <ul>
-        <li>joao</li>
-        <li>henrique</li>
-        <li>Leite</li>
-        <li>joao</li>
-        <li>henrique</li>
-        <li>Leite</li>
-        <li>joao</li>
-        <li>henrique</li>
-        <li>Leite</li>
-      </ul>
+      aqui eu estou testando a capacidade disso aqui se adapatar
     </section>
+    </MainContainer>
   )
 }
 
