@@ -1,7 +1,7 @@
 import { ContainerMenu, Group, ItemList, SideMenu } from "./style";
 import dash from "../../assets/dashboard.svg";
 
-const SideBar = () => {
+const SideBar:React.FC = () => {
   const itemMenu = [
     {
       icon:dash,
