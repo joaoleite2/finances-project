@@ -54,4 +54,5 @@ export const MinimizeButton = styled.button`
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  outline: none;
 `

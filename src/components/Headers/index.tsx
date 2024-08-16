@@ -4,7 +4,7 @@ import { HeaderDiv, TextHeader } from "./style";
 const Header:React.FC = () => {
   return(
     <HeaderDiv>
-      <TextHeader>Test</TextHeader>
+      <TextHeader>Dashboard</TextHeader>
     </HeaderDiv>
   )
 }
