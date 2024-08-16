@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Container, Section } from "./style";
 import Header from "../../components/Headers";
 import { DashboardContext } from "../../contexts/DashboardContext";
-import FinancesGraphics from "./MyFinanesGraphics";
+import FinancesGraphics from "./FinanesGraphics";
 
 const Dashboard:React.FC = () => {
   const { graphics, setGraphics } = useContext(DashboardContext);
@@ -12,7 +12,7 @@ const Dashboard:React.FC = () => {
     <Container>
       <Header />
       <Section>
-        <FinancesGraphics />
+        
       </Section>
     </Container>
   )
