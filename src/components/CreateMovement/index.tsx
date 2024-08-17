@@ -5,33 +5,31 @@ import { itemsForInput } from "./utils";
 import { ModalContext } from "../../contexts/ModalContext";
 
 const CreateMovement:React.FC = () => {  
-  const { setActivedModal } = useContext(ModalContext)
+  const { setActivedModal } = useContext(ModalContext);
   
   return(
     <ModalContainer>
       <ModalHeaderDefault title="Criar movimentação" tip="Insira os dados da nova movimentação" />
       <CreateForm>
         {itemsForInput.map((item) =>(
-          <>
-          {item.type !== 'select' ? (
           <InputDiv>
+          {item.type !== 'select' ? (
+            <>
             <InputLabel>{item.label}</InputLabel>
             <Input type={item.type} />
-          </InputDiv>
+            </>
           ) : (
-            <InputDiv>
-              <InputLabel>
-                {item.label}
-              </InputLabel>
+            <>
+              <InputLabel>{item.label}</InputLabel>
               <Select>
                 <option>Selecione um item</option>
                 {item.options.map((item) => (
                   <option>{item}</option>
                 ))}
               </Select>
-            </InputDiv>
+            </>
           )}
-          </>
+          </InputDiv>
         ))}
         <ButtonsDiv>
           <Buttons className="cancel" onClick={()=> setActivedModal(false)}>Cancelar</Buttons>
