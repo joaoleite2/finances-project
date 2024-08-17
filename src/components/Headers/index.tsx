@@ -12,9 +12,9 @@ const Header:React.FC = () => {
   }
   
   return(
-    <HeaderDiv onClick={() => handleClickOnCreate()}>
+    <HeaderDiv>
       <TextHeader>Dashboard</TextHeader>
-      <ButtonCreate>
+      <ButtonCreate onClick={() => handleClickOnCreate()}>
         <ButtonText>
           Create
         </ButtonText>

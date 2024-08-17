@@ -37,6 +37,21 @@ export const Input = styled.input`
   outline: none;
   border: 1px solid #DFDFE0;
   padding: .7rem;
+  &:focus{
+    outline: 1px solid #1e1e1e;
+  }
+  `
+
+export const Select = styled.select`
+  width: 100%;
+  background-color: #fff;
+  border-radius: 1.4rem;
+  outline: none;
+  border: 1px solid #DFDFE0;
+  padding: .7rem;
+  &:focus{
+    outline: 1px solid #1e1e1e;
+  }
 `
 
 export const ButtonsDiv = styled.div`

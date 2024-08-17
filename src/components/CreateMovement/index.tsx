@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CreateForm, InputDiv, InputLabel, Input, ModalContainer, ButtonsDiv, Buttons } from "./style";
+import { CreateForm, InputDiv, InputLabel, Input, ModalContainer, ButtonsDiv, Buttons, Select } from "./style";
 import ModalHeaderDefault from "../Modal/HeaderDefault";
 import { itemsForInput } from "./utils";
 import { ModalContext } from "../../contexts/ModalContext";
@@ -13,10 +13,24 @@ const CreateMovement:React.FC = () => {
       <CreateForm>
         {itemsForInput.map((item) =>(
           <>
+          {item.type !== 'select' ? (
           <InputDiv>
             <InputLabel>{item.label}</InputLabel>
             <Input type={item.type} />
           </InputDiv>
+          ) : (
+            <InputDiv>
+              <InputLabel>
+                {item.label}
+              </InputLabel>
+              <Select>
+                <option>Selecione um item</option>
+                {item.options.map((item) => (
+                  <option>{item}</option>
+                ))}
+              </Select>
+            </InputDiv>
+          )}
           </>
         ))}
         <ButtonsDiv>

@@ -1,23 +1,36 @@
 interface ObjectType{
   label:string;
-  type:string
+  type:string;
+  options:string[] | [];
 }
 
 export const itemsForInput:ObjectType[] = [
   {
     label:'Nome',
-    type:'text'
+    type:'text',
+    options:[]
   },
   {
     label:'Tipo',
-    type:'select'
+    type:'select',
+    options:[
+      'Gastos',
+      'Ganhos'
+    ]
   },
   {
     label:'Método',
-    type:'select'
+    type:'select',
+    options:[
+      'Crédito',
+      'Débito',
+      'Dinheiro',
+      'Pix'
+    ]
   },
   {
     label:'Data',
-    type:'date'
+    type:'date',
+    options:[]
   }
 ]
