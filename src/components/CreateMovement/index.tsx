@@ -48,10 +48,10 @@ const CreateMovement:React.FC = () => {
           ) : (
             <>
               <InputLabel>{item.label}</InputLabel>
-              <Select value={formData.method}>
+              <Select value={formData[item.value]} onChange={(event) => handleUpdateFormData(item.value, event.target.value)}>
                 <option value={''}>Selecione um item</option>
                 {item.options.map((item, index) => (
-                  <option key={index} value={item}>{item}</option>
+                  <option key={index} value={item.value}>{item.optionText}</option>
                 ))}
               </Select>
             </>

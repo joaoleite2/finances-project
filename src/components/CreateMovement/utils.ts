@@ -1,12 +1,12 @@
 interface OptionsType{
-  text:string;
-  valueOfForm:string
+  value:string;
+  optionText:string;
 }
 
 interface ObjectType{
   label:string;
   type:string;
-  options:string[] | [];
+  options:OptionsType[] | [];
   value:string;
 }
 
@@ -21,8 +21,16 @@ export const itemsForInput:ObjectType[] = [
     label:'Tipo',
     type:'select',
     options:[
-      'Gastos',
-      'Ganhos'
+      {
+        optionText:'Investimentos',
+        value:'investiments'
+      },{
+        optionText:'Gastos',
+        value:'expenses'
+      },{        
+        optionText:'Gastos fixos',
+        value:'fixedExpenses'
+      }
     ],
     value:'type'
   },
@@ -30,16 +38,25 @@ export const itemsForInput:ObjectType[] = [
     label:'Método',
     type:'select',
     options:[
-      'Crédito',
-      'Débito',
-      'Dinheiro',
-      'Pix'
+      {
+        optionText:'Pix',
+        value:'pix'
+      },{
+        optionText:'Crédito',
+        value:'credit'
+      },{
+        optionText:'Débito',
+        value:'debit'
+      },{
+        optionText:'Dinheiro',
+        value:'money'
+      }
     ],
     value:'method'
   },
   {
     label:'Data',
-    type:'text',
+    type:'date',
     options:[],
     value:'date'
   }
