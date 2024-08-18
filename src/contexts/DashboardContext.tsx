@@ -1,23 +1,31 @@
 import React, { createContext, useState } from 'react'
 
+interface FormDataType {
+  name:string;
+  date:string;
+  type:string;
+  method:string;
+  value:string;
+}
+
 interface DashboardContextProps {
-  graphics:{}[]
-  setGraphics: React.Dispatch<React.SetStateAction<{}[]>>
+  movements:FormDataType[]
+  setMovements: React.Dispatch<React.SetStateAction<{}[]>>
 }
 
 export const DashboardContext = createContext<DashboardContextProps>({
-  graphics:[{}],
-  setGraphics:() => {}
+  movements:[],
+  setMovements:() => {}
 })
 
 export const DashboardProvider: React.FC<any> = ({ children }) => {
-  const [ graphics, setGraphics ] = useState<any[]>([])
+  const [ movements, setMovements ] = useState<any[]>([])
 
   return (
     <DashboardContext.Provider
       value={{
-        graphics,
-        setGraphics
+        movements,
+        setMovements
       }}
     >
       {children}

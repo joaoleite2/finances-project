@@ -18,6 +18,12 @@ export const itemsForInput:ObjectType[] = [
     value:'name'
   },
   {
+    label:'Valor',
+    type:'text',
+    options:[],
+    value:'value'
+  },
+  {
     label:'Tipo',
     type:'select',
     options:[

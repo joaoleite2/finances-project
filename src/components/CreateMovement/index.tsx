@@ -1,28 +1,33 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { CreateForm, InputDiv, InputLabel, Input, ModalContainer, ButtonsDiv, Buttons, Select } from "./style";
 import ModalHeaderDefault from "../Modal/HeaderDefault";
 import { itemsForInput } from "./utils";
 import { ModalContext } from "../../contexts/ModalContext";
+import { DashboardContext } from "../../contexts/DashboardContext";
 
 interface FormDataType {
   name:string;
   date:string;
   type:string;
   method:string;
+  value:string;
 }
 
 const CreateMovement:React.FC = () => {  
   const { setActivedModal } = useContext(ModalContext);
+  const { setMovements } = useContext(DashboardContext);
   const [formData, setFormData] = useState<FormDataType | any>({
     name:'',
+    value:'',
     date:'',
     type:'',
     method:''
   });
 
-  useEffect(() => {
-    console.log(formData);
-  },[formData])
+  const saveData = () => {
+    setMovements((prevMovement) => [...prevMovement, formData]);
+    setActivedModal(false);
+  }
 
   const handleUpdateFormData = (field:string, value:string) => {
     setFormData((prevForm:any) => ({
@@ -60,7 +65,7 @@ const CreateMovement:React.FC = () => {
         ))}
         <ButtonsDiv>
           <Buttons className="cancel" onClick={()=> setActivedModal(false)}>Cancelar</Buttons>
-          <Buttons>Salvar</Buttons>
+          <Buttons onClick={() => saveData()}>Salvar</Buttons>
         </ButtonsDiv>
       </CreateForm>
     </ModalContainer>

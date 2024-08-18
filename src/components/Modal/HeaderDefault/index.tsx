@@ -13,9 +13,9 @@ const ModalHeaderDefault:React.FC<PropsType> = ({ title,tip } : PropsType) =>{
 
   return(
     <>
-      <ClosedModal onClick={() => setActivedModal(false)}>
-        <GrFormClose/>
-      </ClosedModal>
+    <ClosedModal onClick={() => setActivedModal(false)}>
+      <GrFormClose/>
+    </ClosedModal>
     <HeaderTop>
       <TitleHeader>
         {title}

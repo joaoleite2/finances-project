@@ -1,8 +1,10 @@
+import React from "react";
 import SideBar from "../components/SideBar";
 import Dashboard from "./Dashboard";
 import { MainContainer } from "./style";
 
-const Page = () => {
+const Page:React.FC = () => {
+
   return(
     <MainContainer>
       <SideBar />
