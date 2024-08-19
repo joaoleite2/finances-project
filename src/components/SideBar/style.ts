@@ -5,6 +5,7 @@ export const SideMenu = styled.nav`
   background-color: #1e1e1e;
   border-radius: 0 1rem 1rem 0;
   width: auto;
+  padding: 1rem;
 
   &.closed{
     p{
@@ -24,6 +25,7 @@ export const ContainerMenu = styled.div`
 export const Group = styled.ul` // setting group or navigatino group
   display: flex;
   flex-direction: column;
+  gap:.5rem
 `
 
 export const ItemList = styled.li`
@@ -36,9 +38,15 @@ export const ItemList = styled.li`
   font-size: .9rem;
   cursor: pointer;
   justify-content: center;
+  border-radius: 2rem;
 
   img{
     width: 1.3rem;
+  }
+
+  &.actived{
+    color:#1e1e1e;
+    background-color: #fff;
   }
 `
 
@@ -47,7 +55,7 @@ export const MinimizeButton = styled.button`
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: -1.5rem;
+  right: -2.3rem;
   bottom:50%;
   transform: translate(0, 50%);
   padding: .8rem;

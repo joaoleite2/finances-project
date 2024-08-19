@@ -1,6 +1,6 @@
 import React from "react";
 import { CardDiv, MovementBanner, MovementeValue, MovementTitle } from "./style";
-import { MdAttachMoney, MdMoneyOff } from "react-icons/md";
+import { MdAttachMoney, /*MdMoneyOff*/ } from "react-icons/md";
 
 interface PropsType {
   title:string;

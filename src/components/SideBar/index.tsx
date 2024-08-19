@@ -1,12 +1,22 @@
 import { ContainerMenu, Group, ItemList, MinimizeButton, SideMenu } from "./style";
 import dash from "../../assets/dashboard.svg";
+import transactions from "../../assets/transactions.svg";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
 
-const itemMenu = [
+interface ItemsMenuType{
+  icon:string;
+  text:string;
+}
+
+const itemMenu:ItemsMenuType[] = [
   {
     icon:dash,
     text:'Dashboard'
+  },
+  {
+    icon:transactions,
+    text:'Transações'
   },
 ];
 
