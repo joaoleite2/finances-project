@@ -3,7 +3,11 @@ import { ButtonCreate, ButtonText, HeaderDiv, TextHeader } from "./style";
 import { FaPlus } from "react-icons/fa";
 import { ModalContext } from "../../contexts/ModalContext";
 
-const Header:React.FC = () => {
+interface HeaderPropsType{
+  pageTitle:string;
+}
+
+const Header:React.FC<HeaderPropsType> = ({pageTitle}:HeaderPropsType) => {
   const { setActivedModal, setModalSection } = useContext(ModalContext);
 
   const handleClickOnCreate = () => {
@@ -13,7 +17,7 @@ const Header:React.FC = () => {
   
   return(
     <HeaderDiv>
-      <TextHeader>Dashboard</TextHeader>
+      <TextHeader>{pageTitle}</TextHeader>
       <ButtonCreate onClick={() => handleClickOnCreate()}>
         <ButtonText>
           Create
