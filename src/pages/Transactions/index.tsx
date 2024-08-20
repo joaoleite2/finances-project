@@ -55,20 +55,6 @@ const TransactionsPage:React.FC = () => {
                     <TableCell>{item}</TableCell>
                     <TableCell>{item}</TableCell>
                   </TableRow>
-                  <TableRow key={index}>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                  </TableRow>
-                  <TableRow key={index}>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                  </TableRow>
                 </>
               ))}
             </tbody>
