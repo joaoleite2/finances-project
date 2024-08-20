@@ -49,6 +49,10 @@ export const ItemList = styled.li`
     background-color: #3B3B3B;
     justify-content: center;
   }
+
+  &.user{
+    justify-content: center;
+  }
 `
 
 export const MinimizeButton = styled.button`

@@ -29,7 +29,7 @@ const SideBar:React.FC = () => {
           </ItemList>
         </Group>
         <Group>
-          <ItemList>item</ItemList>
+          <ItemList className="user">item</ItemList>
         </Group>
         {!itIsOpen 
         ? <MinimizeButton onClick={() => handleOpenClick()}><FaArrowRight /></MinimizeButton> 

@@ -1,65 +1,61 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
 import Header from "../../components/Headers";
 import { Container } from "../global-styles";
-import { HeaderItem, HeaderRow, Table, TableCell, TableDiv, TableRow } from "./style";
-import { headerTable } from "./utils";
+import { ButtonCreate, HeaderItem, HeaderRow, Table, TableCell, TableDiv, TableRow, TipDiv, TipText } from "./style";
+import { exibedDataMethod, exibedDataType, headerTable } from "./utils";
+import HeaderTransaction from "./Header";
+import { DashboardContext } from "../../contexts/DashboardContext";
+import nothing from "../../assets/transactions/nothing.svg";
+import { FaPlus } from "react-icons/fa";
+import { ModalContext } from "../../contexts/ModalContext";
 
 const TransactionsPage:React.FC = () => {
+  const { movements } = useContext(DashboardContext);
+  const tableRef = useRef(null);
+  const { setActivedModal, setModalSection } = useContext(ModalContext);
+
+  const handleClickOnCreate = () => {
+    setActivedModal(true)
+    setModalSection('createParams');
+  }
+  
   return(
     <Container>
       <Header pageTitle="Movimentações" />
-        <TableDiv>
-          <Table>
-            <thead>
-              <HeaderRow>
-                {headerTable.map((item,index) => (
-                  <HeaderItem key={index}>{item}</HeaderItem>
+      <HeaderTransaction tableRef={tableRef}/>
+        {movements.length>0 ? (
+          <TableDiv>
+            <Table ref={tableRef}>
+              <thead>
+                <HeaderRow>
+                  {headerTable.map((item,index) => (
+                    <HeaderItem key={index}>{item}</HeaderItem>
+                  ))}
+                </HeaderRow>
+              </thead>
+              <tbody>
+                {movements.map((item,index)=> (
+                  <TableRow key={index}>
+                    <TableCell>{item.date}</TableCell>
+                    <TableCell>{item.value}</TableCell>
+                    <TableCell>{item.name}</TableCell>
+                    <TableCell>{exibedDataMethod[item.method]}</TableCell>
+                    <TableCell>{exibedDataType[item.type]}</TableCell>
+                  </TableRow>
                 ))}
-              </HeaderRow>
-            </thead>
-            <tbody>
-              {headerTable.map((item,index) => (
-                <>
-                  <TableRow key={index}>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                  </TableRow>
-                  <TableRow key={index}>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                  </TableRow>
-                  <TableRow key={index}>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                  </TableRow>
-                  <TableRow key={index}>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                  </TableRow>
-                  <TableRow key={index}>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                    <TableCell>{item}</TableCell>
-                  </TableRow>
-                </>
-              ))}
-            </tbody>
-          </Table>
-        </TableDiv>
+              </tbody>
+            </Table>
+          </TableDiv>
+        ): (
+          <TipDiv>
+            <TipText>
+              <h2>Não há movimentação</h2>
+              <p>Para acompanhar suas movimentações monetárias em tabela, basta adicioná-las!</p>
+              <ButtonCreate onClick={() => handleClickOnCreate()}><FaPlus />Criar</ButtonCreate>
+            </TipText>
+            <img src={nothing} draggable="false"/>
+          </TipDiv>
+        )}
     </Container>
   )
 }

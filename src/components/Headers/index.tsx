@@ -1,29 +1,14 @@
-import React, { useContext } from "react";
-import { ButtonCreate, ButtonText, HeaderDiv, TextHeader } from "./style";
-import { FaPlus } from "react-icons/fa";
-import { ModalContext } from "../../contexts/ModalContext";
+import React from "react";
+import { HeaderDiv, TextHeader } from "./style";
 
 interface HeaderPropsType{
   pageTitle:string;
 }
 
-const Header:React.FC<HeaderPropsType> = ({pageTitle}:HeaderPropsType) => {
-  const { setActivedModal, setModalSection } = useContext(ModalContext);
-
-  const handleClickOnCreate = () => {
-    setActivedModal(true)
-    setModalSection('createParams');
-  }
-  
+const Header:React.FC<HeaderPropsType> = ({pageTitle}:HeaderPropsType) => {  
   return(
     <HeaderDiv>
       <TextHeader>{pageTitle}</TextHeader>
-      <ButtonCreate onClick={() => handleClickOnCreate()}>
-        <ButtonText>
-          Create
-        </ButtonText>
-        <FaPlus />
-      </ButtonCreate>
     </HeaderDiv>
   )
 }
