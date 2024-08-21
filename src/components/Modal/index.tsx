@@ -9,7 +9,7 @@ const Modal: React.FC = () => {
     <>
     {activedModal? (
       <ModalBackground>
-        {modalSection === 'createParams' ? <CreateMovement /> : null}
+        {modalSection === 'createMovement' ? <CreateMovement /> : null}
       </ModalBackground>
     ) : null}
     </>

@@ -16,7 +16,7 @@ const TransactionsPage:React.FC = () => {
 
   const handleClickOnCreate = () => {
     setActivedModal(true)
-    setModalSection('createParams');
+    setModalSection('createMovement');
   }
   
   return(
@@ -37,7 +37,7 @@ const TransactionsPage:React.FC = () => {
                 {movements.map((item,index)=> (
                   <TableRow key={index}>
                     <TableCell>{item.date}</TableCell>
-                    <TableCell>{item.value}</TableCell>
+                    <TableCell>R$ {item.value}</TableCell>
                     <TableCell>{item.name}</TableCell>
                     <TableCell>{exibedDataMethod[item.method]}</TableCell>
                     <TableCell>{exibedDataType[item.type]}</TableCell>

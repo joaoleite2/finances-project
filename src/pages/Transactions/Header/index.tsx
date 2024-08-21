@@ -5,6 +5,7 @@ import { Button, ButtonsDiv, ButtonText, Header, HeaderFilter } from "./style";
 import { PiFileCsvFill } from "react-icons/pi";
 import { useDownloadExcel } from "react-export-table-to-excel";
 import { TbAdjustments } from "react-icons/tb";
+import { DashboardContext } from "../../../contexts/DashboardContext";
 
 interface TableRefType{
   tableRef: {current?:string | null};
@@ -12,6 +13,7 @@ interface TableRefType{
 
 const HeaderTransaction:React.FC<TableRefType> = ({tableRef}:TableRefType) => {
   const { setActivedModal, setModalSection } = useContext(ModalContext);
+  const { movements } = useContext(DashboardContext)
   const { onDownload } = useDownloadExcel({
     currentTableRef:tableRef.current,
     filename: 'movements',
@@ -20,7 +22,7 @@ const HeaderTransaction:React.FC<TableRefType> = ({tableRef}:TableRefType) => {
 
   const handleClickOnCreate = () => {
     setActivedModal(true)
-    setModalSection('createParams');
+    setModalSection('createMovement');
   }
   
   return(
@@ -29,7 +31,7 @@ const HeaderTransaction:React.FC<TableRefType> = ({tableRef}:TableRefType) => {
         <TbAdjustments />
       </HeaderFilter>
       <ButtonsDiv>
-        <Button onClick={onDownload} className="csv">
+        <Button onClick={movements.length > 2 ? onDownload : ()=> alert('É necessário ao menos 3 registros de movimentação')} className="csv">
           <PiFileCsvFill className="shortIcon"/>
           <ButtonText>
             Exportar
