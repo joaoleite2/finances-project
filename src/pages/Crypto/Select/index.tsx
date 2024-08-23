@@ -1,21 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Container, CryptoSelect, OptionItem, Options } from "./style";
+import { options } from "./utils";
+import { CryptoContext } from "../../../contexts/CryptoContext";
 
 const SelectCrypto:React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const options = ["Pesquisar uma entre as mais famosas","Ver muitas","Moeda específica"];
+  // const [selected, setSelected] = useState<string>('Selecione');
+  const { selected, setSelected } = useContext(CryptoContext);
 
   const handleClickOnSelect = () => {
     setOpen(!open);
   }
+
+  const handleClickOnOption = (value:string) => {
+    setSelected(value);
+    setOpen(false);
+  }
   
   return(
     <Container>
-      <CryptoSelect onClick={()=> handleClickOnSelect()}>Selecione</CryptoSelect>
+      <CryptoSelect onClick={()=> handleClickOnSelect()}>
+        {selected.length<=20 ? selected : `${selected.slice(0,9)}...`}
+      </CryptoSelect>
       {open ? (
         <Options>
           {options.map((item, index)=> (
-            <OptionItem key={index}>{item}</OptionItem>
+            <OptionItem key={index} onClick={()=> handleClickOnOption(item)}>{item}</OptionItem>
           ))}
         </Options>
       ): null}

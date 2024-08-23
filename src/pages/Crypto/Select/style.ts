@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: relative;
   width: fit-content;
-`
+  `
 
 export const CryptoSelect = styled.div`
-  padding: 1rem 4rem;
+  font-size: .8rem;
+  padding: 1rem 0;
   border: 1px solid #CECFCE;
   border-radius: 1rem;
   background-color: #EBEBEA;
@@ -14,7 +15,7 @@ export const CryptoSelect = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  width: fit-content;
+  width: 12rem;
   z-index: 1;
   user-select: none;
 `
@@ -29,7 +30,8 @@ export const Options = styled.ul`
   align-items: center;
   border: 1px solid #CECFCE;
   border-radius: 0 0 1rem 1rem;
-  top: 3rem;
+  top: 2.5rem;
+  user-select: none;
 `
 
 export const OptionItem = styled.li`
