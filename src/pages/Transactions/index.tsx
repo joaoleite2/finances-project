@@ -5,7 +5,7 @@ import { ButtonCreate, HeaderItem, HeaderRow, Table, TableCell, TableDiv, TableR
 import { exibedDataMethod, exibedDataType, headerTable } from "./utils";
 import HeaderTransaction from "./Header";
 import { DashboardContext } from "../../contexts/DashboardContext";
-import nothing from "../../assets/transactions/nothing.svg";
+import nothing from "../../assets/un-draw/nothing.svg";
 import { FaPlus } from "react-icons/fa";
 import { ModalContext } from "../../contexts/ModalContext";
 

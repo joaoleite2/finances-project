@@ -13,5 +13,5 @@ export const Container = styled.div`
 `
 
 export const Section = styled.section`
-  margin-top: 4rem;
+  margin-top: 1.5rem;
 `
