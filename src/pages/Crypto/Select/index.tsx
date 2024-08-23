@@ -12,20 +12,20 @@ const SelectCrypto:React.FC = () => {
     setOpen(!open);
   }
 
-  const handleClickOnOption = (value:string) => {
-    setSelected(value);
+  const handleClickOnOption = (value:string,text:string) => {
+    setSelected({text:text,value:value});
     setOpen(false);
   }
   
   return(
     <Container>
       <CryptoSelect onClick={()=> handleClickOnSelect()}>
-        {selected.length<=20 ? selected : `${selected.slice(0,9)}...`}
+        {selected.text.length<=20 ? selected.text : `${selected.text.slice(0,9)}...`}
       </CryptoSelect>
       {open ? (
         <Options>
           {options.map((item, index)=> (
-            <OptionItem key={index} onClick={()=> handleClickOnOption(item)}>{item}</OptionItem>
+            <OptionItem key={index} onClick={()=> handleClickOnOption(item.value, item.text)}>{item.text}</OptionItem>
           ))}
         </Options>
       ): null}

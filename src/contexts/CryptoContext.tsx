@@ -1,21 +1,22 @@
 import React, { createContext, useState } from "react";
+import { OptionType } from "../pages/Crypto/Select/utils";
 
 interface CryptoContextProps{
-  selected:string;
-  setSelected:React.Dispatch<React.SetStateAction<string>>;
+  selected:OptionType;
+  setSelected:React.Dispatch<React.SetStateAction<OptionType>>;
   search:string;
   setSearch:React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const CryptoContext = createContext<CryptoContextProps>({
-  selected:'',
+  selected:{text:'',value:''},
   setSelected:() => {},
   search:'',
   setSearch:() => {}
 })
 
 export const CryptoProvider:React.FC<any> = ({children}) => {
-  const [selected, setSelected] = useState('Selecione')
+  const [selected, setSelected] = useState<OptionType>({text:'Selecione',value:''})
   const [search, setSearch] = useState('')
 
   return(
