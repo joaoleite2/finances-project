@@ -1,7 +1,10 @@
 import React from "react";
 import { Container, Section } from "../global-styles";
 import Header from "../../components/Headers";
-import { CryptoSelect, SubHeader } from "./style";
+import { SubHeader } from "./style";
+import TipComponent from "../../components/TipsComponent";
+import found from "../../assets/un-draw/found.svg";
+import SelectCrypto from "./Select";
 
 const CryptoPage:React.FC = () => {
 
@@ -9,10 +12,14 @@ const CryptoPage:React.FC = () => {
     <Container>
       <Header pageTitle="Crypto" />
       <SubHeader>
-        <CryptoSelect>Selecione</CryptoSelect>
+        <SelectCrypto />
       </SubHeader>
       <Section>
-
+        <TipComponent 
+          image={found}
+          title="Selecione uma opção"
+          paragraph="Uma opção deve ser selecionada, para realizarmos a busca."
+        />
       </Section>
     </Container>
   )
