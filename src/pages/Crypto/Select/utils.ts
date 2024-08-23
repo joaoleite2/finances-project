@@ -10,10 +10,10 @@ export const options:OptionType[] = [
   },
   {
     text:'Moeda específica',
-    value:'specificCurrency'
+    value:'search'
   },
   {
-    text:'Pesquisar uma entre as mais famosas',
-    value:'search'
+    text:'Entre as mais valiosas',
+    value:'mostValuable'
   }
 ];

@@ -27,6 +27,7 @@ export const Group = styled.ul` // setting group or navigatino group
   flex-direction: column;
   gap:.5rem;
   align-items: start;
+  user-select: none;
 `
 
 export const ItemList = styled.li`

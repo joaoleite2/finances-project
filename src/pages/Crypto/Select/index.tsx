@@ -3,7 +3,7 @@ import { Container, CryptoSelect, OptionItem, Options } from "./style";
 import { options } from "./utils";
 import { CryptoContext } from "../../../contexts/CryptoContext";
 
-const SelectCrypto:React.FC = () => {
+const SelectRequest:React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   // const [selected, setSelected] = useState<string>('Selecione');
   const { selected, setSelected } = useContext(CryptoContext);
@@ -33,4 +33,4 @@ const SelectCrypto:React.FC = () => {
   )
 }
 
-export default SelectCrypto;
+export default SelectRequest;

@@ -22,10 +22,10 @@ const SideBar:React.FC = () => {
         <Group>
           {navItems.map((item,index)=> (
             <ItemList onClick={() => navigationClick(item.page)} 
-            className={page === item.page ? 'actived' : ''}
-            key={index}
+              className={page === item.page ? 'actived' : ''}
+              key={index}
             >
-              <img src={item.icon} /> <p>{item.textPage}</p>
+              <img src={item.icon} draggable='false' /> <p>{item.textPage}</p>
             </ItemList>
           ))}
         </Group>

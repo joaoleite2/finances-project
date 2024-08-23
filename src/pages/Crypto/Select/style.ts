@@ -32,6 +32,7 @@ export const Options = styled.ul`
   border-radius: 0 0 1rem 1rem;
   top: 2.5rem;
   user-select: none;
+  width: 100%;
 `
 
 export const OptionItem = styled.li`

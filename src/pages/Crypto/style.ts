@@ -15,14 +15,28 @@ export const SubHeader = styled.div`
 `
 
 export const SearchDiv = styled.div`
+  display: flex;
+  width: fit-content;
+  background-color: #EBEBEA;
+  border: 1px solid rgba(0,0,0,.1);
+`
+
+export const SearchInput = styled.input`
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  border: none;
+  background-color: #EBEBEA;
+`
+
+export const SearchIcon = styled.div`
   font-size: 1.5rem;
-  border: 1px solid #1e1e1e;
   color: #1e1e1e;
   height: 2.5rem;
   width: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-left: 1px solid rgba(0,0,0,.1);
   cursor: pointer;
 `
