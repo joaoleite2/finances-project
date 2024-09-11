@@ -5,7 +5,6 @@ import { CryptoContext } from "../../../contexts/CryptoContext";
 
 const SelectRequest:React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
-  // const [selected, setSelected] = useState<string>('Selecione');
   const { selected, setSelected } = useContext(CryptoContext);
 
   const handleClickOnSelect = () => {

@@ -1,15 +1,16 @@
 import React from "react";
-import { Container, CryptoList, ListItem } from "./style";
+import { Container, ContainerCoin } from "./style";
 import { coins } from "./utils";
 
 const MostFamous:React.FC = () => {
   return(
     <Container>
-      <CryptoList>
-        {coins.map((item,index) => (
-          <ListItem key={index}><img src={item.icon} alt={`${item.text} icon`} draggable="false"/> {item.text}</ListItem>
-        ))}
-      </CryptoList>
+      {coins.map(item => (
+        <ContainerCoin>
+          <img src={item.icon} />
+          {item.text}
+        </ContainerCoin>
+      ))}
     </Container>
   )
 }

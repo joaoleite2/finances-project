@@ -7,27 +7,33 @@ import solana from '../../../assets/coins/solana.png';
 interface CoinsType {
   icon:string;
   text:string;
+  color:string;
 }
 
 export const coins:CoinsType[] = [
   {
     icon:bitcoin,
-    text:'Bitcoin'
+    color:'#F7931A',
+    text:'Bitcoin',
   },
   {
     icon:cardano,
+    color:'#1F6DD4',
     text:'Cardano'
   },
   {
     icon:dogecoin,
+    color:'#BCA131',
     text:'Dogecoin'
   },
   {
     icon:ethereum,
+    color:'#9098B6',
     text:'Ethereum'
   },
   {
     icon:solana,
+    color:'#2AD5BD',
     text:'Solana'
   },
 ]

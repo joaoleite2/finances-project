@@ -14,4 +14,14 @@ export const Container = styled.div`
 
 export const Section = styled.section`
   margin-top: 1.5rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  &.chart{
+    
+  }
+`
+
+export const ChartDiv = styled.div`
+  width: 70%;
 `

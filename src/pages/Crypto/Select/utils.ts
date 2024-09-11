@@ -4,10 +4,10 @@ export interface OptionType {
 }
 
 export const options:OptionType[] = [
-  {
-    text:'Veja mais',
-    value:'seeMore'    
-  },
+  // {
+  //   text:'Veja mais',
+  //   value:'seeMore'    
+  // },
   {
     text:'Moeda específica',
     value:'search'

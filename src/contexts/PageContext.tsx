@@ -11,7 +11,7 @@ export const PageContext = createContext<PageContextProps>({
 })
 
 export const PageProvider:React.FC<any> = ({children}) => {
-  const [page, setPage] = useState('dashboard');
+  const [page, setPage] = useState('crypto');
 
   return(
     <PageContext.Provider value={{

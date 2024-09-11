@@ -1,28 +1,28 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  /* border: 1px solid;
-  border-radius: 2rem; */
-  width: 100%;
-  padding: 2rem 0;
-`
-
-export const CryptoList = styled.ul`
-  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap:.5rem;
 `
 
-export const ListItem = styled.li`
-  font-size: 1.2em;
-  font-weight: 600;
+export const ContainerCoin = styled.div`
+  border-radius: 1rem;
+  border: 1px solid #E1E1E2;
   display: flex;
   align-items: center;
-  gap:1rem;
+  justify-content: start;
+  padding: .5rem 2rem;
+  gap:.5rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
+  transition: transform .2s ease;
 
   img{
-    width: 2.5rem;
+    width: 2rem;
+  }
+
+  &:hover{
+    transform: scale(1.1);
   }
 `

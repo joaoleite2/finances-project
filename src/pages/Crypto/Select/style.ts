@@ -16,7 +16,7 @@ export const CryptoSelect = styled.div`
   display: flex;
   justify-content: center;
   width: 12rem;
-  z-index: 1;
+  z-index: 2;
   user-select: none;
 `
 
@@ -33,6 +33,7 @@ export const Options = styled.ul`
   top: 2.5rem;
   user-select: none;
   width: 100%;
+  z-index: 1;
 `
 
 export const OptionItem = styled.li`
@@ -43,6 +44,7 @@ export const OptionItem = styled.li`
   cursor: pointer;
   width: 100%;
   border-top: 1px solid #CECFCE;
+  background-color:#fff;
 
   &:hover{
     background-color:#FAFAFA;
