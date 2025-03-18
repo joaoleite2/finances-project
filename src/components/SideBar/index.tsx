@@ -35,7 +35,7 @@ const SideBar:React.FC = () => {
         {!itIsOpen 
         ? <MinimizeButton onClick={() => handleOpenClick()}><FaArrowRight /></MinimizeButton> 
         : <MinimizeButton onClick={() => handleOpenClick()}><FaArrowLeft /></MinimizeButton>
-        }   
+        }
       </ContainerMenu>
     </SideMenu>
   )

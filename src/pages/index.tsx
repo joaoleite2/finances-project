@@ -1,22 +1,46 @@
-import React, { useContext } from "react";
+import React from "react";
 import SideBar from "../components/SideBar";
 import Dashboard from "./Dashboard";
 import { MainContainer } from "./global-styles";
-import { PageContext } from "../contexts/PageContext";
+import { BrowserRouter, Route, Routes } from "react-router";
 import TransactionsPage from "./Transactions";
 import CryptoPage from "./Crypto";
 
-const Page:React.FC = () => {
+interface PagesType {
+  element:any
+  path:string
+}
 
-  const { page } = useContext(PageContext);
-  
+const routes:PagesType[] = [
+  {
+    element:<Dashboard/>,
+    path:'/'
+  },
+  {
+    element:<TransactionsPage/>,
+    path:'movimentacoes'
+  },
+  {
+    element:<CryptoPage/>,
+    path:'/crypto'
+  },
+]
+
+const Page:React.FC = () => {
   return(
+    <>
     <MainContainer>
       <SideBar />
-      {page === 'dashboard' ? <Dashboard /> : null}
-      {page === 'transactions' ? <TransactionsPage /> : null}
-      {page === 'crypto' ? <CryptoPage /> : null}
+      <BrowserRouter>
+        <Routes>
+          {routes.map((item, index) => (
+            <Route path={item.path} element={item.element} key={index}/>
+          ))}
+        </Routes>
+      </BrowserRouter>
     </MainContainer>
+    
+    </>
   )
 }
 

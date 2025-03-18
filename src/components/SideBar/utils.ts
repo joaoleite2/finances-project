@@ -11,12 +11,12 @@ interface NavType {
 export const navItems: NavType[] = [
   {
     icon:dash,
-    page:'dashboard',
+    page:'/',
     textPage:'Dashboard'
   },
   {
     icon:transactions,
-    page:'transactions',
+    page:'transacoes',
     textPage:'Transações'
   },
   {
